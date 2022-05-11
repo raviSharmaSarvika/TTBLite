@@ -1,0 +1,21 @@
+{
+"greeting":"Welcome!",
+"email":"Email Address",
+"emailPlaceholder":"Email@address.com",
+"password":"Password",
+"passwordPlaceholder":"Password",
+"forgotPassword":"Forgot Password?",
+"login":"Login",
+"loginwithschool":"Login with your school",
+"t&c":"Terms and Conditions - Privacy Policy",
+"unread notification":"Unread Notifications",
+"allRight":" ©2021 Train The Brain, Inc. All Right Reserved.",
+"request":"My Request ({{Request}})",
+"noDataFound":"Not Data Found ",
+"subject":"Subject : {{Subject}}",
+"DueDate&Time":"Due Date & Time :  {{DueTime}}",
+"BTJoin":"Join Session",
+"BTRelease":"Release",
+"REQ_CREATED":"Request Submited {{REQ_CREATED}}",
+"REQ_ASSIGNED":"Assigned to {{REQ_ASSIGNED}}"
+}
