@@ -1,22 +1,29 @@
-name: Android
-
-on:   
+name: react-native-android-build-apk
+on:
   push:
-    branches: [main]
-
+    branches:
+      - master
 jobs:
-  build:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - name: Use Node.js V16
-          uses: actions/setup-node@v1
-          with:
-              node-version: 16.x
-      
-        - run: npm ci
-      
-        - run: ./gradlew assembleRelease
-          working-directory: android
-          name: Build Android apk(debug)
-      
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+  build-android:
+    needs: install-and-test
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+      - name: Build Android Release
+        run: |
+          cd android && ./gradlew assembleRelease
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/
