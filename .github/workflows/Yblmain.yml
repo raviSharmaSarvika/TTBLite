@@ -12,11 +12,11 @@ jobs:
         with:
               node-version: 16.x
 
-      - name: Install dependencies
-        run: npm ci
+      
+      - run: npm ci
 
-      - name: Build Android Release
-      - run: ./gradlew assembleRelease
+     
+      - run: cd android && ./gradlew assembleRelease
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
