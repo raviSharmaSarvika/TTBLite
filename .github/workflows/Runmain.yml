@@ -1,0 +1,20 @@
+name: Android
+
+on: [push,pull_request]
+
+jobs:
+  build:
+        runs-on: ubuntu-latest
+        steps:
+        -uses: actions/checkout@v2
+        -name: Use Node.js V16
+                                  
+      uses: actions/setup-node@v1
+      with :
+      node-version :16.x
+      
+      - run: npm ci
+      - run: ./gradlew assembleDebug
+      working-directory: android
+      name: Build Android apk(debug)
+      
